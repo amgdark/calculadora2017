@@ -6,8 +6,6 @@ install:
   - if [[ $TRAVIS_PYTHON_VERSION == 2* ]]; then travis_retry pip install -r requerimientos2.txt; fi
   - if [[ $TRAVIS_PYTHON_VERSION == 3* ]]; then travis_retry pip install -r requerimientos3.txt; fi
 
-  - pip install -r requerimientos.txt
-
 before_script: 
   - autopep8 -ir *
   - if [[ $TRAVIS_PYTHON_VERSION == 2* ]]; then travis_retry flake8 --max-complexity=8 --exclude=*.txt,*.md,*.pyc *; fi
@@ -19,3 +17,6 @@ script:
   - python TestCalculadora.py
   - coverage --branch run
   - coverage report -m
+
+notifications:
+  email: false
