@@ -1,16 +1,15 @@
 language: python
 python:
   - "2.7"
-  - "3.4"
 
 install: 
-  "pip install -r requerimientos.txt"
+  pip install -r requerimientos.txt
 
 before_script: 
   - autopep8 -ir *
   - flake8 --max-complexity=8 --exclude=*.txt,*.md,*.pyc *
 
 script: 
-   - python TestCalculadora.py
-   - coverage --branch run
-   - coverage report -m
+  - python TestCalculadora.py
+  - coverage --branch run
+  - coverage report -m
