@@ -3,7 +3,7 @@ python:
   - "2.7"
   - "3.4"
 
-  install: 
+install: 
   "pip install -r requerimientos.txt"
 
 before_script: 
