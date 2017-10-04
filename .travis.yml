@@ -15,7 +15,7 @@ script:
   - if [[ $TRAVIS_PYTHON_VERSION == 2* ]]; then travis_retry echo python2; fi
 
   - python TestCalculadora.py
-  - coverage --branch run TestCalculadora.py
+  - coverage run --branch TestCalculadora.py
   - coverage report -m
 
 notifications:
