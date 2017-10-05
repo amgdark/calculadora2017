@@ -9,7 +9,9 @@ install:
 
 before_script: 
   - autopep8 -ir *
-  - if [[ $TRAVIS_PYTHON_VERSION == 2* ]]; then travis_retry flake8 --max-complexity=8 --exclude=*.txt,*.md,*.pyc *; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == 2* ]]; then 
+  - travis_retry flake8 --max-complexity=8 --exclude=*.txt,*.md,*.pyc.sh *; 
+  - fi
 
 script: 
   - chmod +x script.sh
